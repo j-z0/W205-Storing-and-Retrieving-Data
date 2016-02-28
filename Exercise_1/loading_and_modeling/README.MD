@@ -4,5 +4,5 @@ Steps performed:
  - Changed directory to loading_and_modeling
  - Removed headers in each of the files
  - Renamed the files by removing spaces
- - Make new directories on HDFS
+ - Made new directories on HDFS
  - Moved the renamed files to HDFS 
