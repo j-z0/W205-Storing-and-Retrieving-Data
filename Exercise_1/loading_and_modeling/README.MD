@@ -6,3 +6,4 @@ Steps performed:
  - Renamed the files by removing spaces
  - Made new directories on HDFS
  - Moved the renamed files to HDFS 
+ - Defined schema and created tables from said files
