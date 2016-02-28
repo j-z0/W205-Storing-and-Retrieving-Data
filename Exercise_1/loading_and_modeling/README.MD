@@ -7,3 +7,6 @@ Steps performed:
  - Made new directories on HDFS
  - Moved the renamed files to HDFS 
  - Defined schema and created tables from said files
+
+Note:
+The "Timely and Effective Care - Hospital.csv" flatfile was too big to upload to GitHub, so I manually broke it up to 3 pieces.
