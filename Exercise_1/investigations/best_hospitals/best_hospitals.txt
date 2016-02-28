@@ -1,0 +1,19 @@
+ProviderID	HospitalName				MeanHospitalScore	VarianceHospitalScore	CountScore
+201304  	MOUNT DESERT ISLAND HOSPITAL    	100.0   		0.0     		11
+521320  	TOMAH MEMORIAL HOSPITAL 		100.0   		0.0     		10
+390071  	LOCK HAVEN HOSPITAL     		99.92857142857143       0.06632653061224489     14
+141336  	ST JOSEPH'S HOSPITAL    		99.9    		0.09    		10
+460003  	SALT LAKE REGIONAL MEDICAL CENTER       99.85714285714286       0.1938775510204081      28
+450851  	BAYLOR HEART AND VASCULAR HOSPITAL      99.85   		0.22749999999999998     20
+340014  	NOVANT HEALTH FORSYTH MEDICAL CENTER    99.83870967741936       0.32882414151925066     31
+420102  	GHS PATEWOOD MEMORIAL HOSPITAL  	99.83333333333333       0.13888888888888887     12
+100055  	FLORIDA HOSPITAL NORTH PINELLAS 	99.83333333333333       0.8055555555555556      30
+170183  	KANSAS SURGERY & RECOVERY CENTER        99.81818181818181       0.3305785123966942      11
+
+What hospitals are models of high-quality care? That is, which hospitals have the most consistently high scores for a variety of procedures?
+
+In this analysis I used the 'Timely and Effective Care - Hospital.csv' flatfile that is loaded into Spark as a table called "effective_transform".
+
+First I wrote a query to find the 10 hospitals with the highest average scores across the procedures they provide, but the list of hospitals returned has average scores that are much higher than 100. So I wrote another query to find procedures that are not scored on a scale of 0-100. I proceeded to remove those procedures, along with some other time-to-event measures (e.g. Left before being seen) and medians (e.g. Median Time to ECG) from the analysis. It is important to have scores on the same scale because we dont want any one of the procedures to have a greater effect on the aggregate than the other procedures. 
+
+Next, I wrote  another query that was very similar to the one I wrote in the very beginning. This time, the average scores of the top hospitals are all =<100 as expected. However, some of these hospitals with very high scores only provide 1 procedure, which does not quite answer our question of "Which hospitals have the most consistently high scores for a variety of procedures." Therefore I filtered my last query results to obtain a list of 10 hospitals with high average scores across at least 10 procedures, and I ended up with the table on the top of this page.

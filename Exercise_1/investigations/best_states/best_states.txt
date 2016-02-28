@@ -1,0 +1,19 @@
+State	MeanStateScore		VarianceStateScore	CountScore
+ME      95.55882352941177       70.54065743944636       34
+FL      94.94736842105263       89.89196675900273       38
+NH      94.91176470588235       66.31574394463668       34
+DE      94.87878787878788       71.31864095500461       33
+VA      94.62857142857143       72.40489795918366       35
+RI      94.5    		58.014705882352956      34
+MO      94.37142857142857       58.633469387755106      35
+CT      94.25714285714285       94.87673469387757       35
+NC      94.23684210526316       104.18074792243772      38
+SC      94.11428571428571       83.81551020408162       35
+
+What states are models of high-quality care?
+
+In this analysis I used the "Timely and Effective Care - State.csv" flatfile loaded into Spark as a table called "effective_state_transform".
+
+First, I wrote a query to find the 10 states with the highest average scores across the procedures they provide, but the states returned have average scores that are much higher than 100. I performed the same step here as in question 1, where I removed procedures that are not scored on a 0-100 scale along with some other irregular measures (e.g. time-to-event and median metrics). It is important to have scores on the same scale because we dont want any one of the procedures to have a greater effect on the aggregate than the other procedures. 
+
+Next, I queried the filtered dataset to find the 10 best states with the highest average scores, and I ended up with the table on the top of this page. I expected to see California to be one of the top 10 states, but I was wrong.

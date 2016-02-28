@@ -1,0 +1,11 @@
+Survey_Mean_Correlation
+0.00271042220642355
+
+Survey_Variance_Correlation
+-0.0011969993307213928
+
+Are average scores for hospital quality or procedural variability correlated with patient survey responses?
+
+In this analysis I used both the "Timely and Effective Care - Hospital.csv" and "hvbp_hcahps_05_28_2015.csv" flatfiles loaded and transformed in Spark as tables called "effective_count" and "survey_transform", respectively.
+
+To find the correlation between the average scores for hospital quality and procedural variability vs. patient survey responses, I performed a left join to merge the the average score and score variance information from question 1 with the total survey score column in the "survey_transform" table. As a result, I now have a table with 3 columns (Mean hospital score, hospital score variance, and total survey score) that will allow me to answer the question of interest. I used the CORR command in SQL to obtain the correlation coefficients of MeanHospitalScore vs. TotalSurveyScore, and VarianceHospitalScore vs. TotalSurveyScore. Both of these returned a value that is very close to 0, which means that there is very little to no correlation between these two pairs of variables.

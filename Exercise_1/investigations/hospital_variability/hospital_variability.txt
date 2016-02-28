@@ -1,0 +1,15 @@
+MeasureName								MeanMeasureScore	VarianceMeasureScore
+Thrombolytic Therapy    						82.90045766590389       481.98665882944397
+Head CT results 							66.71324296141815       477.18888614639235
+Fibrinolytic Therapy Received Within 30 Minutes Of Hospital Arrival     50.0   			352.6666666666667   Fibrinolytic Therapy Received Within 30 Minutes of ED Arrival   	70.25   		325.74632352941165  Healthcare workers given influenza vaccination  			80.68061252392671       267.25866979161765  Warfarin therapy discharge instructions 				88.8820907617504        265.78796126891007  Venous thromboembolism prophylaxis      				89.11431805319751       232.78828961700816  Stroke Education        						90.53962900505903       196.37153240873673
+Home Management Plan of Care Document   				89.375  		161.7760416666667
+Immunization for influenza      					91.74645627173041       142.68029969125467
+
+Which procedures have the greatest variability between hospitals?
+
+In this analysis I used the "Timely and Effective Care - Hospital.csv" flatfile loaded into Spark as a table called "effective_transform".
+
+For this analysis I wanted to obtain a list of procedures with the highest variance across different hospitals, because this illustrates the procedures that get the most extreme scores, and therefore the greatest variability. I used a similar approach as in question 1 to answer this question; I created a new table with the irregular procedures removed (e.g. Emergency room volume, Median time to ECG, etc.). It is important to have scores on the same scale because we dont want any one of the procedures to have a greater effect on the aggregate than the other procedures. 
+
+Next, instead of grouping the scores by hospital like I did in question 1, I grouped the scores by measure/procedure instead. This allowed me to see the variance of the scores for each measure/procedure as suppose to each hospital. I wrote a query to list the 10 procedures with the highest variance, which returned the table on the top of this page.
+
