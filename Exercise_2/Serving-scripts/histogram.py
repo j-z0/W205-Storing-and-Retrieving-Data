@@ -11,3 +11,5 @@ y = sys.argv[1].split(',')[1]
 cur.execute("SELECT word,count FROM tweetwordcount WHERE count BETWEEN %s  AND %s", (x,y))
 for record in cur:
     print record
+    
+conn.close()
