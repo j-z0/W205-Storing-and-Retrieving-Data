@@ -64,6 +64,8 @@ python psycopg-init.py
 
 python hello-stream-twitter.py
 
+cd tweetwordcount
+
 sparse run
 
 
