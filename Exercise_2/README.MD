@@ -1,5 +1,5 @@
 Streaming application for Twitter data
-#Step-by-step instructions on how to run the application. Detailed explanations in Architecture.pdf
+###Step-by-step instructions on how to run the application. Detailed explanations in Architecture.pdf
 
 source /opt/py27environment/bin/activate
 
