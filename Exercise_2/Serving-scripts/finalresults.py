@@ -12,3 +12,5 @@ else:
     cur.execute("SELECT word, count FROM tweetwordcount ORDER BY word")
     for record in cur:
         print record
+
+conn.close()
